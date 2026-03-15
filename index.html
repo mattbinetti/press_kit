@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sometimes They Knock — Press Kit</title>
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F5F0E8;
+    --paper-dark: #E8DFC8;
+    --ink: #1A1410;
+    --ink-light: #4A3F30;
+    --red: #8B1A1A;
+    --red-light: #B02020;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #2a2218; font-family: 'Courier Prime', monospace; color: var(--ink); min-height: 100vh; }
+  body::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E"); pointer-events: none; z-index: 1000; }
+  .page-wrapper { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+  .cover { background: var(--paper); position: relative; overflow: hidden; margin-bottom: 2rem; box-shadow: 0 8px 40px rgba(0,0,0,0.5); }
+  .cover::after { content: ''; position: absolute; inset: 0; background: repeating-linear-gradient(transparent, transparent 27px, rgba(180,160,120,0.18) 27px, rgba(180,160,120,0.18) 28px); pointer-events: none; }
+  .cover-text { padding: 2.5rem 3rem 3rem; text-align: center; position: relative; z-index: 1; }
+  .film-title { font-family: 'Special Elite', 'Courier New', Courier, monospace; font-size: clamp(1rem, 5.5vw, 3.2rem); letter-spacing: 0.08em; color: var(--ink); line-height: 1.1; margin-bottom: 1rem; white-space: nowrap; }
+  .tagline { font-family: 'Courier Prime', monospace; font-style: italic; font-size: clamp(0.75rem, 2.2vw, 1.25rem); color: var(--ink-light); line-height: 1.8; margin-bottom: 0.5rem; }
+  .director-credit { font-family: 'Courier Prime', monospace; font-size: 1rem; color: var(--ink-light); margin-top: 0.8rem; margin-bottom: 0.8rem; letter-spacing: 0.04em; }
+  .divider { border: none; border-top: 1px solid var(--ink); margin: 1.5rem auto; width: 100%; }
+  .film-meta { font-family: 'Courier Prime', monospace; font-weight: 700; font-size: clamp(0.8rem, 1.8vw, 1rem); color: var(--red); letter-spacing: 0.1em; line-height: 2; margin-top: 0.8rem; margin-bottom: 0.8rem; }
+  .production-credit { font-family: 'Courier Prime', monospace; font-size: 0.95rem; color: var(--ink-light); margin-top: 0.8rem; margin-bottom: 0.8rem; letter-spacing: 0.05em; }
+  .section { background: var(--paper); margin-bottom: 2rem; padding: 2.5rem 3rem; position: relative; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.4); }
+  .section::after { content: ''; position: absolute; inset: 0; background: repeating-linear-gradient(transparent, transparent 27px, rgba(180,160,120,0.15) 27px, rgba(180,160,120,0.15) 28px); pointer-events: none; }
+  .section-inner { position: relative; z-index: 1; }
+  .section-heading { font-family: 'Special Elite', 'Courier New', Courier, monospace; font-size: clamp(1.1rem, 2.5vw, 1.5rem); letter-spacing: 0.12em; color: var(--ink); margin-bottom: 0.5rem; }
+  .section-rule { border: none; border-top: 2px solid var(--red); margin-bottom: 1.5rem; }
+  .body-text { font-family: 'IM Fell English', serif; font-size: clamp(0.95rem, 1.6vw, 1.05rem); line-height: 1.85; color: var(--ink); text-align: justify; margin-bottom: 1.2rem; }
+  .stills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .still-img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+  .still-img:hover { transform: scale(1.02); box-shadow: 0 6px 24px rgba(0,0,0,0.35); z-index: 2; position: relative; }
+  .two-col-stills { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-top: 1.5rem; }
+  .poem { font-family: 'Courier Prime', monospace; font-size: clamp(1.05rem, 2vw, 1.35rem); line-height: 2.2; text-align: center; color: var(--ink); padding: 1rem 0 1.5rem; }
+  .info-table { width: 100%; border-collapse: collapse; font-family: 'Courier Prime', monospace; font-size: 0.95rem; border: 1px solid var(--ink-light); margin-top: 1.5rem; }
+  .info-table tr:not(:last-child) { border-bottom: 1px solid var(--paper-dark); }
+  .info-table td { padding: 0.6rem 0.9rem; vertical-align: top; }
+  .info-table td:first-child { background: var(--paper-dark); font-weight: 700; letter-spacing: 0.06em; width: 130px; color: var(--ink-light); white-space: nowrap; }
+  .info-table td:last-child { background: var(--paper); color: var(--ink); }
+  .section, .cover { opacity: 0; transform: translateY(18px); animation: fadeUp 0.7s ease forwards; }
+  .cover { animation-delay: 0.1s; }
+  .section:nth-child(2) { animation-delay: 0.2s; }
+  .section:nth-child(3) { animation-delay: 0.3s; }
+  .section:nth-child(4) { animation-delay: 0.4s; }
+  .section:nth-child(5) { animation-delay: 0.5s; }
+  .section:nth-child(6) { animation-delay: 0.6s; }
+  .section:nth-child(7) { animation-delay: 0.7s; }
+  @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+  .crew-card { display: flex; gap: 1.5rem; align-items: flex-start; margin-bottom: 2rem; flex-wrap: wrap; }
+  .crew-photo { flex: 0 0 auto; }
+  .crew-bio { flex: 1; min-width: 200px; }
+  .social-links { text-align: center; padding: 1.5rem 0 2rem; }
+  .social-links a { font-family: 'Special Elite', 'Courier New', Courier, monospace; font-size: 0.95rem; color: var(--ink-light); letter-spacing: 0.08em; text-decoration: none; border-bottom: 1px solid var(--ink-light); padding-bottom: 2px; display: inline-block; }
+  .social-links .sep { color: var(--ink-light); margin: 0 1rem; }
+  @media (max-width: 600px) {
+    .section { padding: 1.5rem 1.25rem; }
+    .cover-text { padding: 1.5rem 1.25rem 2rem; }
+    .stills-grid, .two-col-stills { grid-template-columns: 1fr; }
+    .poem { font-size: 0.78rem; line-height: 2; }
+    .crew-card { flex-direction: column; align-items: center; text-align: center; }
+    .crew-bio .body-text { text-align: center; }
+    .social-links .sep { display: none; }
+    .social-links a { display: block; margin: 0.6rem auto; }
+  }
+</style>
+</head>
+<body>
+<div class="page-wrapper">
+
+  <div class="cover">
+    <img class="cover-poster" src="images/image_01.jpg" alt="Sometimes They Knock — Alex Poster" style="width:100%;display:block;aspect-ratio:16/9;object-fit:cover;">
+    <div class="cover-text">
+      <h1 class="film-title">SOMETIMES THEY KNOCK</h1>
+      <p class="tagline">"A code only he can hear.<br>A life only he must live."</p>
+      <hr class="divider">
+      <p class="director-credit">Directed by Matt Binetti</p>
+      <div class="film-meta">SHORT FILM &nbsp;·&nbsp; 10 MIN &nbsp;·&nbsp; 2026</div>
+      <p class="production-credit">Racine Video Production Workshop</p>
+      <img src="images/image_02.png" style="width:80%;max-width:500px;display:block;margin:3rem auto 0;" alt="Official Selection Milwaukee Film Festival 2026">
+      <div style="position:relative;width:100%;padding-bottom:56.25%;margin-top:2rem;">
+        <iframe src="https://www.youtube.com/embed/75JZSCuIZ3U" title="Sometimes They Knock" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-inner">
+      <h2 class="section-heading">SYNOPSIS</h2>
+      <hr class="section-rule">
+      <p class="body-text">Sometimes They Knock follows Alex, a young man navigating the fractured landscape of a mental health diagnosis. As he moves through distorted memories, fevered hallucinations, and haunting visions, a documentary filmmaker captures his story, searching for the human being behind the diagnosis. The film is a meditation on empathy: what does it mean to truly see another person, even when their reality looks nothing like your own?</p>
+      <div class="two-col-stills">
+        <img class="still-img" src="images/image_03.jpg" alt="Film still">
+        <img class="still-img" src="images/image_04.jpg" alt="Film still">
+      </div>
+      <h2 class="section-heading" style="margin-top:1.5rem;">DIRECTOR'S STATEMENT</h2>
+      <hr class="section-rule">
+      <p class="body-text">This film began with a moment of recognition: watching a stranger outside my workplace, lost in conversation with themselves, struggling with a locked door to a condemned building. In that moment, I realized how little I understood about their reality, their daily struggles, their inner world. That encounter sparked a question that became the foundation of this project: <em>What is life truly like for someone navigating severe mental illness?</em></p>
+      <p class="body-text">Sometimes They Knock is not a clinical portrait. It is an immersive, impressionistic journey into Alex's consciousness — a place where past and present blur, where voices and visions feel more real than the world outside, where a simple locked door can become an insurmountable barrier. My hope is that this film creates understanding where there was distance, empathy where there was fear. Mental health crises are unfolding on our streets, in our communities, every day.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-inner">
+      <h2 class="section-heading">FILM STILLS</h2>
+      <hr class="section-rule">
+      <div class="stills-grid">
+        <img class="still-img" src="images/image_05.jpg" alt="Film still">
+        <img class="still-img" src="images/image_06.jpg" alt="Film still">
+        <img class="still-img" src="images/image_07.jpg" alt="Film still">
+        <img class="still-img" src="images/image_08.jpg" alt="Film still">
+        <img class="still-img" src="images/image_09.jpg" alt="Film still">
+        <img class="still-img" src="images/image_10.jpg" alt="Film still">
+        <img class="still-img" src="images/image_11.jpg" alt="Film still">
+        <img class="still-img" src="images/image_12.jpg" alt="Film still">
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-inner">
+      <img style="width:100%;aspect-ratio:16/9;object-fit:cover;display:block;margin-bottom:2rem;" src="images/image_13.jpg" alt="Film still">
+      <h2 class="section-heading">ABOUT THE DIRECTOR</h2>
+      <hr class="section-rule">
+      <p class="body-text"><img src="images/image_14.jpg" alt="Matt Binetti" style="float:right;width:200px;margin:0 0 1rem 1.5rem;border-radius:4px;">Matt Binetti is a Racine, Wisconsin–born filmmaker and the owner of <strong>Reservoir Video Co.</strong>, a creative video production company known for crafting compelling visual stories for TV, web, and local media. With over 20 years of experience in non-fiction storytelling, Matt began his media journey while earning a B.A. in Communication Arts at the University of Wisconsin–Madison. He later worked in New York City producing reality and documentary content for networks including History Channel and HGTV before returning to Wisconsin. In 2017, Matt founded Reservoir Video Co. in Racine, where he leads a team focused on high-quality narrative and commercial video projects.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-inner">
+      <h2 class="section-heading">ABOUT THE FILM'S STYLE</h2>
+      <hr class="section-rule">
+      <p class="body-text">What do dreams, memories or hallucinations look and sound like? Cinema has always chased that question. <em>Sometimes They Knock</em> draws direct inspiration from Richard Linklater's <em>Waking Life</em>, which pioneered rotoscoping to blur the line between reality and reverie. Using green screen production and layered visual effects, the film transforms Alex's world into something familiar yet distorted, vivid yet unstable. The approach also freed the production to move fast and stay nimble, capturing raw, honest performances on an iPhone 16 Pro.</p>
+      <table style="width:100%;border-collapse:collapse;margin-top:0.8rem;">
+        <tr>
+          <td style="padding:0.25rem 0.25rem 0.25rem 0;width:50%;vertical-align:top;"><img src="images/image_15.jpg" style="width:100%;display:block;"></td>
+          <td style="padding:0.25rem 0 0.25rem 0.25rem;width:50%;vertical-align:top;"><img src="images/image_16.jpg" style="width:100%;display:block;"></td>
+        </tr>
+        <tr>
+          <td style="padding:0.25rem 0.25rem 0.25rem 0;vertical-align:top;"><img src="images/image_17.jpg" style="width:100%;display:block;"></td>
+          <td style="padding:0.25rem 0 0.25rem 0.25rem;vertical-align:top;"><img src="images/image_18.jpg" style="width:100%;display:block;"></td>
+        </tr>
+        <tr>
+          <td style="padding:0.25rem 0.25rem 0.25rem 0;vertical-align:top;"><img src="images/image_19.jpg" style="width:100%;display:block;"></td>
+          <td style="padding:0.25rem 0 0.25rem 0.25rem;vertical-align:top;"><img src="images/image_20.jpg" style="width:100%;display:block;"></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-inner">
+      <h2 class="section-heading">SOME CAST AND CREW</h2>
+      <hr class="section-rule">
+      <div class="crew-card">
+        <div class="crew-photo"><img src="images/image_21.png" alt="Nathan Michael" style="width:160px;height:160px;object-fit:cover;border-radius:4px;border:2px solid var(--ink-light);filter:sepia(15%);"></div>
+        <div class="crew-bio">
+          <p class="body-text" style="margin-bottom:0.3rem;"><strong>Nathan Michael</strong> &mdash; <em>Alex</em></p>
+          <p class="body-text" style="font-size:0.88rem;">Known online as Nateflandersisdead, Nathan Michael is a multi-disciplinary creative based in the Kenosha–Chicago area. His work spans writing, filmmaking, and community-driven art, all rooted in a raw, introspective style. Through his platform he shares honest reflections on growth, sobriety, and the pursuit of minimizing distractions—bringing that same authenticity to his portrayal of Alex.</p>
+        </div>
+      </div>
+      <div class="crew-card">
+        <div class="crew-photo"><img src="images/image_22.png" alt="Sara Fortis" style="width:160px;height:160px;object-fit:cover;object-position:center top;border-radius:4px;border:2px solid var(--ink-light);filter:sepia(15%);"></div>
+        <div class="crew-bio">
+          <p class="body-text" style="margin-bottom:0.3rem;"><strong>Sara Fortis</strong> &mdash; <em>Filmmaker</em></p>
+          <p class="body-text" style="font-size:0.88rem;">Sara Fortis is a 22-year-old actress, singer, and dancer who has been performing since the age of twelve. A proud Mexican-American artist, she brings over a decade of experience in musical theater, acting, and dance to every project she touches. Sara is deeply committed to inspiring the next generation of artists and storytellers.</p>
+        </div>
+      </div>
+      <div class="crew-card">
+        <div class="crew-photo"><img src="images/image_23.jpg" alt="Jason Love" style="width:160px;height:160px;object-fit:cover;border-radius:4px;border:2px solid var(--ink-light);filter:sepia(15%);"></div>
+        <div class="crew-bio">
+          <p class="body-text" style="margin-bottom:0.3rem;"><strong>Jason Love</strong> &mdash; <em>Producer</em></p>
+          <p class="body-text" style="font-size:0.88rem;">Jason Love is a Wisconsin-based filmmaker, media educator, and award-winning entertainer with more than twenty years of community-centered storytelling in Racine, WI. His work empowers local youth and emerging creatives through digital media, and his dedication to lifting voices in his community runs through every frame of <em>Sometimes They Knock</em>.</p>
+        </div>
+      </div>
+      <div class="crew-card" style="margin-bottom:0.5rem;">
+        <div class="crew-photo"><img src="images/image_ramos.png" alt="J. Anthony Ramos" style="width:160px;height:160px;object-fit:cover;object-position:center top;border-radius:4px;border:2px solid var(--ink-light);filter:sepia(15%);"></div>
+        <div class="crew-bio">
+          <p class="body-text" style="margin-bottom:0.3rem;"><strong>J. Anthony Ramos</strong> &mdash; <em>Writer</em></p>
+          <p class="body-text" style="font-size:0.88rem;">J. Anthony Ramos is a Director, Writer, Producer and Actor whose parents migrated from Zacatecas, Mexico, was born and raised in Southeastern Wisconsin. His love of films and storytelling started at a young age, when his parents would often take him to the movies. The films that inspire him are from all genres, but he is particularly fond of Horror and Science Fiction films.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-inner">
+      <h2 class="section-heading">ALEX'S POEM</h2>
+      <hr class="section-rule">
+      <div class="poem">
+        In the quiet dark, they creep,<br>
+        Beneath the moon where shadows sleep.<br>
+        Whispers linger, soft yet thin,<br>
+        As knocking echoes draw me in.<br>
+        Behind the walls, between the cracks,<br>
+        They speak in taps that never lack.<br>
+        A code, a call, from distant lands,<br>
+        Where stars are held by unseen hands.
+      </div>
+      <h2 class="section-heading" style="margin-top:1.5rem;">FILM INFORMATION</h2>
+      <hr class="section-rule">
+      <table class="info-table">
+        <tr><td>TITLE</td><td>Sometimes They Knock</td></tr>
+        <tr><td>RUNTIME</td><td>10 minutes</td></tr>
+        <tr><td>FORMAT</td><td>Short Film, 4K, Digital Cinema Package</td></tr>
+        <tr><td>CAMERA</td><td>iPhone 16 Pro</td></tr>
+        <tr><td>COMPANY</td><td>Racine Video Production Workshop</td></tr>
+        <tr><td>PREMIERE</td><td>Milwaukee Film Festival — Spring 2026</td></tr>
+        <tr><td>PRODUCER</td><td>Jason Love</td></tr>
+        <tr><td>WRITER</td><td>J. Anthony Ramos</td></tr>
+        <tr><td>KEY CAST</td><td>Nate Michael as "Alex"</td></tr>
+        <tr><td></td><td>Sara Fortis as "Filmmaker"</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-inner" style="text-align:center;padding:1rem 0;">
+      <img src="images/image_24.jpg" style="width:80%;max-width:650px;display:block;margin:0 auto 0.8rem;">
+      <p style="font-family:'Courier New',Courier,monospace;font-size:0.9rem;color:#555;margin-bottom:3.5rem;font-style:italic;">Matt and Nate</p>
+      <img src="images/image_25.png" alt="United Way of Racine County" style="max-width:380px;width:100%;display:block;margin:0 auto 1.2rem;">
+      <p style="font-family:'Special Elite','Courier New',Courier,monospace;font-style:italic;font-size:1rem;color:var(--ink-light);letter-spacing:0.03em;font-weight:bold;">This film was made possible through a grant<br>provided by United Way of Racine</p>
+    </div>
+  </div>
+
+  <div class="social-links">
+    <a href="https://www.facebook.com/RacineVideo" target="_blank" rel="noopener noreferrer">&#9654; facebook.com/RacineVideo</a>
+    <span class="sep">·</span>
+    <a href="https://www.instagram.com/racinevideo/" target="_blank" rel="noopener noreferrer">&#9654; instagram.com/racinevideo</a>
+  </div>
+
+</div>
+</body>
+</html>
