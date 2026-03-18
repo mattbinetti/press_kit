@@ -38,7 +38,7 @@
   .still-img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; transition: transform 0.3s ease, box-shadow 0.3s ease; }
   .still-img:hover { transform: scale(1.02); box-shadow: 0 6px 24px rgba(0,0,0,0.35); z-index: 2; position: relative; }
   .two-col-stills { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-top: 1.5rem; }
-  .poem { font-family: 'Courier Prime', monospace; font-size: clamp(1.05rem, 2vw, 1.35rem); line-height: 2.2; text-align: center; color: var(--ink); padding: 1rem 0 1.5rem; }
+  .poem { font-family: 'Courier Prime', monospace; font-size: clamp(0.82rem, 1.4vw, 0.97rem); line-height: 1.9; text-align: center; color: var(--ink); padding: 0.5rem 0 1rem; }
   .info-table { width: 100%; border-collapse: collapse; font-family: 'Courier Prime', monospace; font-size: 0.95rem; border: 1px solid var(--ink-light); margin-top: 1.5rem; }
   .info-table tr:not(:last-child) { border-bottom: 1px solid var(--paper-dark); }
   .info-table td { padding: 0.6rem 0.9rem; vertical-align: top; }
@@ -59,15 +59,29 @@
   .social-links { text-align: center; padding: 1.5rem 0 2rem; }
   .social-links a { font-family: 'Special Elite', 'Courier New', Courier, monospace; font-size: 0.95rem; color: var(--ink-light); letter-spacing: 0.08em; text-decoration: none; border-bottom: 1px solid var(--ink-light); padding-bottom: 2px; display: inline-block; }
   .social-links .sep { color: var(--ink-light); margin: 0 1rem; }
+  .credits-block { margin-top: 1.8rem; }
+  .credits-category { font-family: 'Special Elite', 'Courier New', Courier, monospace; font-size: 0.72rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--red); margin-bottom: 0.9rem; margin-top: 1.8rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--paper-dark); }
+  .credits-category:first-child { margin-top: 0; }
+  .credits-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.1rem 1.5rem; }
+  .credit-row { display: flex; flex-direction: column; padding: 0.45rem 0; border-bottom: 1px solid rgba(180,160,120,0.25); }
+  .credit-role { font-family: 'Courier Prime', monospace; font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-light); margin-bottom: 0.1rem; }
+  .credit-name { font-family: 'Courier Prime', monospace; font-size: 0.95rem; color: var(--ink); font-weight: 700; }
+  .credit-character { font-family: 'Courier Prime', monospace; font-size: 0.8rem; color: var(--ink-light); font-style: italic; margin-top: 0.05rem; }
+  .credits-music { display: flex; flex-direction: column; gap: 0.6rem; }
+  .music-row { padding: 0.6rem 0; border-bottom: 1px solid rgba(180,160,120,0.25); }
+  .music-title { font-family: 'Courier Prime', monospace; font-size: 0.95rem; font-weight: 700; color: var(--ink); }
+  .music-detail { font-family: 'Courier Prime', monospace; font-size: 0.82rem; color: var(--ink-light); margin-top: 0.15rem; }
+  .thanks-list { font-family: 'Courier Prime', monospace; font-size: 0.92rem; color: var(--ink); line-height: 2.1; }
+  .grant-line { font-family: 'Courier Prime', monospace; font-size: 0.88rem; color: var(--ink-light); margin-top: 1.2rem; padding-top: 1.2rem; border-top: 1px solid var(--paper-dark); font-style: italic; text-align: center; line-height: 1.7; }
   @media (max-width: 600px) {
     .section { padding: 1.5rem 1.25rem; }
     .cover-text { padding: 1.5rem 1.25rem 2rem; }
     .stills-grid, .two-col-stills { grid-template-columns: 1fr; }
-    .poem { font-size: 0.78rem; line-height: 2; }
-    .crew-card { flex-direction: column; align-items: center; text-align: center; }
+.crew-card { flex-direction: column; align-items: center; text-align: center; }
     .crew-bio .body-text { text-align: center; }
     .social-links .sep { display: none; }
     .social-links a { display: block; margin: 0.6rem auto; }
+    .credits-grid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -208,15 +222,101 @@
       <table class="info-table">
         <tr><td>TITLE</td><td>Sometimes They Knock</td></tr>
         <tr><td>RUNTIME</td><td>10 minutes</td></tr>
-        <tr><td>FORMAT</td><td>Short Film, 4K, Digital Cinema Package</td></tr>
+        <tr><td>FORMAT</td><td>Short Film &nbsp;·&nbsp; 4K &nbsp;·&nbsp; Digital Cinema Package</td></tr>
         <tr><td>CAMERA</td><td>iPhone 16 Pro</td></tr>
         <tr><td>COMPANY</td><td>Racine Video Production Workshop</td></tr>
-        <tr><td>PREMIERE</td><td>Milwaukee Film Festival — Spring 2026</td></tr>
-        <tr><td>PRODUCER</td><td>Jason Love</td></tr>
-        <tr><td>WRITER</td><td>J. Anthony Ramos</td></tr>
-        <tr><td>KEY CAST</td><td>Nate Michael as "Alex"</td></tr>
-        <tr><td></td><td>Sara Fortis as "Filmmaker"</td></tr>
+        <tr><td>PREMIERE</td><td>Milwaukee Film Festival &mdash; Spring 2026</td></tr>
       </table>
+
+      <div class="credits-block">
+
+        <p class="credits-category">Crew</p>
+        <div class="credits-grid">
+          <div class="credit-row">
+            <span class="credit-role">Director &amp; Editor</span>
+            <span class="credit-name">Matt Binetti</span>
+          </div>
+          <div class="credit-row">
+            <span class="credit-role">Producer</span>
+            <span class="credit-name">Jason Love</span>
+          </div>
+          <div class="credit-row">
+            <span class="credit-role">Associate Producer</span>
+            <span class="credit-name">Maya Averi</span>
+          </div>
+          <div class="credit-row">
+            <span class="credit-role">Writer</span>
+            <span class="credit-name">J. Anthony Ramos</span>
+          </div>
+          <div class="credit-row">
+            <span class="credit-role">Production Sound Mixer</span>
+            <span class="credit-name">Kelly Askam</span>
+          </div>
+          <div class="credit-row">
+            <span class="credit-role">Story Consultant</span>
+            <span class="credit-name">Nancy Gibson</span>
+          </div>
+        </div>
+
+        <p class="credits-category">Cast</p>
+        <div class="credits-grid">
+          <div class="credit-row">
+            <span class="credit-name">Nate Michael</span>
+            <span class="credit-character">Alex</span>
+          </div>
+          <div class="credit-row">
+            <span class="credit-name">Sara Fortis</span>
+            <span class="credit-character">Filmmaker</span>
+          </div>
+          <div class="credit-row">
+            <span class="credit-name">Jason Love</span>
+            <span class="credit-character">Friend</span>
+          </div>
+          <div class="credit-row">
+            <span class="credit-name">Sam Altamirano</span>
+            <span class="credit-character">Mother</span>
+          </div>
+          <div class="credit-row">
+            <span class="credit-name">Joshua Martinez</span>
+            <span class="credit-character">Father</span>
+          </div>
+          <div class="credit-row">
+            <span class="credit-name">Leah Love</span>
+            <span class="credit-character">Woman on Bus</span>
+          </div>
+          <div class="credit-row">
+            <span class="credit-name">Evelyn Love</span>
+            <span class="credit-character">Girl on Bus</span>
+          </div>
+          <div class="credit-row">
+            <span class="credit-name">Brian Duffy</span>
+            <span class="credit-character">Man on Bus</span>
+          </div>
+        </div>
+
+        <p class="credits-category">Music</p>
+        <div class="credits-music">
+          <div class="music-row">
+            <div class="music-title">&ldquo;Feel the Pain&rdquo; &mdash; Dinosaur Jr.</div>
+            <div class="music-detail">Performed by Tency Music &nbsp;&middot;&nbsp; Licensed by Easy Song</div>
+          </div>
+          <div class="music-row" style="border-bottom:none;">
+            <div class="music-title">Additional Music</div>
+            <div class="music-detail">Artlist</div>
+          </div>
+        </div>
+
+        <p class="credits-category">Special Thanks</p>
+        <div class="thanks-list">
+          Friendship Clubhouse<br>
+          NAMI of Racine County<br>
+          Denise Lockwood<br>
+          James E. Myers, Psy. D.
+        </div>
+
+        <p class="grant-line">This film was made possible through a grant<br>provided by United Way of Racine County</p>
+
+      </div>
     </div>
   </div>
 
@@ -224,8 +324,7 @@
     <div class="section-inner" style="text-align:center;padding:1rem 0;">
       <img src="images/image_24.jpg" style="width:80%;max-width:650px;display:block;margin:0 auto 0.8rem;">
       <p style="font-family:'Courier New',Courier,monospace;font-size:0.9rem;color:#555;margin-bottom:3.5rem;font-style:italic;">Matt and Nate</p>
-      <img src="images/image_25.png" alt="United Way of Racine County" style="max-width:380px;width:100%;display:block;margin:0 auto 1.2rem;">
-      <p style="font-family:'Special Elite','Courier New',Courier,monospace;font-style:italic;font-size:1rem;color:var(--ink-light);letter-spacing:0.03em;font-weight:bold;">This film was made possible through a grant<br>provided by United Way of Racine</p>
+      <img src="images/image_25.png" alt="United Way of Racine County" style="max-width:380px;width:100%;display:block;margin:0 auto;">
     </div>
   </div>
 
