@@ -77,17 +77,17 @@
     .section { padding: 1.5rem 1.25rem; }
     .cover-text { padding: 1.5rem 1.25rem 2rem; }
     .stills-grid, .two-col-stills { grid-template-columns: 1fr; }
-.crew-card { flex-direction: column; align-items: center; text-align: center; }
+    .crew-card { flex-direction: column; align-items: center; text-align: center; }
     .crew-bio .body-text { text-align: center; }
     .social-links .sep { display: none; }
     .social-links a { display: block; margin: 0.6rem auto; }
     .credits-grid { grid-template-columns: 1fr; }
     .director-photo {
-  float: none;
-  display: block;
-  width: 120px !important;
-  margin: 0 auto 1.2rem !important;
-}
+      float: none !important;
+      display: block !important;
+      width: 120px !important;
+      margin: 0 auto 1.2rem !important;
+    }
   }
 </style>
 </head>
@@ -148,8 +148,7 @@
       <img style="width:100%;aspect-ratio:16/9;object-fit:cover;display:block;margin-bottom:2rem;" src="images/image_13.jpg" alt="Film still">
       <h2 class="section-heading">ABOUT THE DIRECTOR</h2>
       <hr class="section-rule">
-      <p class="body-text"><img src="images/image_14.jpg" alt="Matt Binetti" class="director-photo" style="float:right;width:200px;margin:0 0 1rem 1.5rem;border-radius:4px;">
-um Matt Binetti is a Racine, Wisconsin–born filmmaker and the owner of <strong>Reservoir Video Co.</strong>, a creative video production company known for crafting compelling visual stories for TV, web, and local media. With over 20 years of experience in non-fiction storytelling, Matt began his media journey while earning a B.A. in Communication Arts at the University of Wisconsin–Madison. He later worked in New York City producing reality and documentary content for networks including History Channel and HGTV before returning to Wisconsin. In 2017, Matt founded Reservoir Video Co. in Racine, where he leads a team focused on high-quality narrative and commercial video projects.</p>
+      <p class="body-text"><img src="images/image_14.jpg" alt="Matt Binetti" class="director-photo" style="float:right;width:200px;margin:0 0 1rem 1.5rem;border-radius:4px;">Matt Binetti is a Racine, Wisconsin–born filmmaker and the owner of <strong>Reservoir Video Co.</strong>, a creative video production company known for crafting compelling visual stories for TV, web, and local media. With over 20 years of experience in non-fiction storytelling, Matt began his media journey while earning a B.A. in Communication Arts at the University of Wisconsin–Madison. He later worked in New York City producing reality and documentary content for networks including History Channel and HGTV before returning to Wisconsin. In 2017, Matt founded Reservoir Video Co. in Racine, where he leads a team focused on high-quality narrative and commercial video projects.</p>
     </div>
   </div>
 
@@ -235,96 +234,99 @@ um Matt Binetti is a Racine, Wisconsin–born filmmaker and the owner of <strong
         <tr><td>PREMIERE</td><td>Milwaukee Film Festival &mdash; Spring 2026</td></tr>
       </table>
 
-      <div class="credits-block">
+```
+  <div class="credits-block">
 
-        <p class="credits-category">Crew</p>
-        <div class="credits-grid">
-          <div class="credit-row">
-            <span class="credit-role">Director &amp; Editor</span>
-            <span class="credit-name">Matt Binetti</span>
-          </div>
-          <div class="credit-row">
-            <span class="credit-role">Producer</span>
-            <span class="credit-name">Jason Love</span>
-          </div>
-          <div class="credit-row">
-            <span class="credit-role">Associate Producer</span>
-            <span class="credit-name">Maya Averi</span>
-          </div>
-          <div class="credit-row">
-            <span class="credit-role">Writer</span>
-            <span class="credit-name">J. Anthony Ramos</span>
-          </div>
-          <div class="credit-row">
-            <span class="credit-role">Production Sound Mixer</span>
-            <span class="credit-name">Kelly Askam</span>
-          </div>
-          <div class="credit-row">
-            <span class="credit-role">Story Consultant</span>
-            <span class="credit-name">Nancy Gibson</span>
-          </div>
-        </div>
-
-        <p class="credits-category">Cast</p>
-        <div class="credits-grid">
-          <div class="credit-row">
-            <span class="credit-name">Nate Michael</span>
-            <span class="credit-character">Alex</span>
-          </div>
-          <div class="credit-row">
-            <span class="credit-name">Sara Fortis</span>
-            <span class="credit-character">Filmmaker</span>
-          </div>
-          <div class="credit-row">
-            <span class="credit-name">Jason Love</span>
-            <span class="credit-character">Friend</span>
-          </div>
-          <div class="credit-row">
-            <span class="credit-name">Sam Altamirano</span>
-            <span class="credit-character">Mother</span>
-          </div>
-          <div class="credit-row">
-            <span class="credit-name">Joshua Martinez</span>
-            <span class="credit-character">Father</span>
-          </div>
-          <div class="credit-row">
-            <span class="credit-name">Leah Love</span>
-            <span class="credit-character">Woman on Bus</span>
-          </div>
-          <div class="credit-row">
-            <span class="credit-name">Evelyn Love</span>
-            <span class="credit-character">Girl on Bus</span>
-          </div>
-          <div class="credit-row">
-            <span class="credit-name">Brian Duffy</span>
-            <span class="credit-character">Man on Bus</span>
-          </div>
-        </div>
-
-        <p class="credits-category">Music</p>
-        <div class="credits-music">
-          <div class="music-row">
-            <div class="music-title">&ldquo;Feel the Pain&rdquo; &mdash; Dinosaur Jr.</div>
-            <div class="music-detail">Performed by Tency Music &nbsp;&middot;&nbsp; Licensed by Easy Song</div>
-          </div>
-          <div class="music-row">
-            <div class="music-title">Additional Music</div>
-            <div class="music-detail">Artlist</div>
-          </div>
-        </div>
-
-        <p class="credits-category">Special Thanks</p>
-        <div class="thanks-list">
-          Friendship Clubhouse<br>
-          NAMI of Racine County<br>
-          Denise Lockwood<br>
-          James E. Myers, Psy. D.
-        </div>
-
-        <p class="grant-line">This film was made possible through a grant<br>provided by United Way of Racine County</p>
-
+    <p class="credits-category">Crew</p>
+    <div class="credits-grid">
+      <div class="credit-row">
+        <span class="credit-role">Director &amp; Editor</span>
+        <span class="credit-name">Matt Binetti</span>
+      </div>
+      <div class="credit-row">
+        <span class="credit-role">Producer</span>
+        <span class="credit-name">Jason Love</span>
+      </div>
+      <div class="credit-row">
+        <span class="credit-role">Associate Producer</span>
+        <span class="credit-name">Maya Averi</span>
+      </div>
+      <div class="credit-row">
+        <span class="credit-role">Writer</span>
+        <span class="credit-name">J. Anthony Ramos</span>
+      </div>
+      <div class="credit-row">
+        <span class="credit-role">Production Sound Mixer</span>
+        <span class="credit-name">Kelly Askam</span>
+      </div>
+      <div class="credit-row">
+        <span class="credit-role">Story Consultant</span>
+        <span class="credit-name">Nancy Gibson</span>
       </div>
     </div>
+
+    <p class="credits-category">Cast</p>
+    <div class="credits-grid">
+      <div class="credit-row">
+        <span class="credit-name">Nate Michael</span>
+        <span class="credit-character">Alex</span>
+      </div>
+      <div class="credit-row">
+        <span class="credit-name">Sara Fortis</span>
+        <span class="credit-character">Filmmaker</span>
+      </div>
+      <div class="credit-row">
+        <span class="credit-name">Jason Love</span>
+        <span class="credit-character">Friend</span>
+      </div>
+      <div class="credit-row">
+        <span class="credit-name">Sam Altamirano</span>
+        <span class="credit-character">Mother</span>
+      </div>
+      <div class="credit-row">
+        <span class="credit-name">Joshua Martinez</span>
+        <span class="credit-character">Father</span>
+      </div>
+      <div class="credit-row">
+        <span class="credit-name">Leah Love</span>
+        <span class="credit-character">Woman on Bus</span>
+      </div>
+      <div class="credit-row">
+        <span class="credit-name">Evelyn Love</span>
+        <span class="credit-character">Girl on Bus</span>
+      </div>
+      <div class="credit-row">
+        <span class="credit-name">Brian Duffy</span>
+        <span class="credit-character">Man on Bus</span>
+      </div>
+    </div>
+
+    <p class="credits-category">Music</p>
+    <div class="credits-music">
+      <div class="music-row">
+        <div class="music-title">&ldquo;Feel the Pain&rdquo; &mdash; Dinosaur Jr.</div>
+        <div class="music-detail">Performed by Tency Music &nbsp;&middot;&nbsp; Licensed by Easy Song</div>
+      </div>
+      <div class="music-row">
+        <div class="music-title">Additional Music</div>
+        <div class="music-detail">Artlist</div>
+      </div>
+    </div>
+
+    <p class="credits-category">Special Thanks</p>
+    <div class="thanks-list">
+      Friendship Clubhouse<br>
+      NAMI of Racine County<br>
+      Denise Lockwood<br>
+      James E. Myers, Psy. D.
+    </div>
+
+    <p class="grant-line">This film was made possible through a grant<br>provided by United Way of Racine County</p>
+
+  </div>
+</div>
+```
+
   </div>
 
   <div class="section">
